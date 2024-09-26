@@ -53,6 +53,7 @@ options = {
   isPlayingBgm: true,
   isReplayEnabled: true,
   seed: 2,
+  theme: "shapeDark"
 };
 
 /** @type {{x: number, height: number, speed: number}[]} */
