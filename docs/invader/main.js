@@ -161,14 +161,14 @@ function update() {
     }
   });
 
-  if (digits.length >= G.DIGITS + 1 && messageStatus != "Invating") {
+  if (digits.length >= G.DIGITS + 1 && messageStatus != "Invaded") {
     play("explosion");
     zanki--;
     if (zanki == 0) {
       end();
       return;
     }
-    messageStatus = "Invating";
+    messageStatus = "Invaded";
   }
 }
 
@@ -207,7 +207,7 @@ function showMessage() {
       stageInit();
       return;
     
-    case "Invating":
+    case "Invaded":
       digits = [];
       break;
             
@@ -230,8 +230,8 @@ function showMessage() {
       case "StageClear":
         displayMessage("Stage" + stage.round.toString() + "-" + stage.stage.toString() + " clear");
         break;
-      case "Invating":
-        displayMessage("Invated!");
+      case "Invaded":
+        displayMessage("Invaded!");
         break;
     }
   }
