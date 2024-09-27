@@ -83,9 +83,6 @@ function update() {
     return;
   }
 
-  displayMessage(input.pos.x.toString());
-
-
   addTicks--;
   if (addTicks < 0) {
     if (ufoFlag) {
