@@ -83,6 +83,9 @@ function update() {
     return;
   }
 
+  displayMessage(input.pos.x.toString());
+
+
   addTicks--;
   if (addTicks < 0) {
     if (ufoFlag) {
@@ -106,13 +109,13 @@ function update() {
   p = vec((G.DIGITS-1) * 6 , G.DISP_Y);
   char(String.fromCharCode("a".charCodeAt(0) + zanki - 1), p);
 
-  if (keyboard.code['KeyF'].isJustPressed) {
+  if (keyboard.code['KeyF'].isJustPressed || (input.isJustPressed && input.pos.x < (G.WIDTH/2))) {
     if (currentNum == 10) {
       currentNum = 0;
     } else {
       currentNum++;
     }
-  } else if (keyboard.code['KeyJ'].isJustPressed) {
+  } else if (keyboard.code['KeyJ'].isJustPressed || (input.isJustPressed && input.pos.x > (G.WIDTH/2))) {
     let index = digits.indexOf(Number(currentNum));
     missileNum--;
 
